@@ -1,5 +1,5 @@
 export const enviromnent = {
-    lineLimits:12,
+    pageLimit:12,
     baseURL:"http://localhost:3333"
    
 };

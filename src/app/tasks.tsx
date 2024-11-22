@@ -168,14 +168,14 @@ const Tasks = () => {
         </button>
       </div>
 
-      {/* Lista de tarefas em cards */}
+      {/* Lista de tarefas */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {tasks.map((task) => (
           <div
             key={task.id}
             className={`task-card p-4 border rounded shadow-md flex flex-col justify-between cursor-pointer 
               ${selectedTask?.id === task.id ? "bg-slate-700" : "bg-slate-800"} 
-              hover:bg-slate-700`} // Adiciona classes CSS para hover e cursor
+              hover:bg-slate-700`}
             onClick={() => {
               setSelectedTask(task);
               setNewTask(task.title);

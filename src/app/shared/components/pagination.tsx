@@ -12,11 +12,10 @@ const Pagination: React.FC<PaginationProps> = ({
   totalCount,
   onPageChange,
 }) => {
-  let totalPages = Math.ceil(totalCount / enviromnent.lineLimits);
+  let totalPages = Math.ceil(totalCount / enviromnent.pageLimit);
 
   totalPages = totalPages < 1 ? 1 : totalPages;
 
-  // Garante que a página inicial nunca seja 0
   const validPage = currentPage < 1 ? 1 : currentPage;
 
   const handlePrev = () => {
@@ -40,7 +39,7 @@ const Pagination: React.FC<PaginationProps> = ({
       </span>
       <button
         onClick={handleNext}
-        disabled={validPage * enviromnent.lineLimits >= totalCount}
+        disabled={validPage * enviromnent.pageLimit >= totalCount}
         className="px-4 py-2 bg-blue-500 text-white rounded disabled:opacity-50"
       >
         Próxima

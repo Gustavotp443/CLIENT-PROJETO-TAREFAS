@@ -62,12 +62,12 @@ const getAll = async (
     filter = "",
   ): Promise<TTasksWithTotalCount | Error> => {
     try {
-      const urlRelativa = `/tasks?page=${page}&limit=${enviromnent.lineLimits}&filter=${filter}`;
+      const urlRelativa = `/tasks?page=${page}&limit=${enviromnent.pageLimit}&filter=${filter}`;
       const { data, headers } = await api.get(urlRelativa);
       if (data) {
         return {
           data,
-          totalCount: Number(headers["x-total-count"] || enviromnent.lineLimits)
+          totalCount: Number(headers["x-total-count"] || enviromnent.pageLimit)
         };
       }
   
